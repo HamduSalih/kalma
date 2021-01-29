@@ -1,0 +1,59 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    min-width: calc(100vw-215px) !important;
+    margin-left: 215px;
+}
+
+.dashboardcontainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.firstSection{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.topCards{
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+.infoBox{
+    display: flex;
+    flex-direction: column;
+    border: solid #0000ff1a 1px;
+}
+
+.header{
+    border-bottom: solid #0000ff1a 1px;
+    padding: 10px;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+}
+
+.contentLeft{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border-right: solid #0000ff1a 1px;
+    padding: 10px;
+}
+
+.contentRight{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 10px;
+}
