@@ -33,7 +33,7 @@ export class Unsettled extends React.Component{
         return(
                 <div className={styles.topCards}>
                     <div>
-                        <h4 style={{marginBottom: '10px', fontWeight: 500, fontSize: '20px'}}>Sum of Collectibles</h4>
+                        <h4 style={{marginBottom: '10px', fontWeight: 500, fontSize: '20px'}}>Unsettled Bills</h4>
                     </div>
                     <div className={styles.infoBox}>
                         <div className={styles.header}>
