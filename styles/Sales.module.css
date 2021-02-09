@@ -1,0 +1,13 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.bodyContent{
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  margin-top: 60px;
+}

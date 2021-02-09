@@ -31,7 +31,7 @@ const Dashboard = () => {
 
     return(
         <div className={styles.container}>
-            <NavBar />
+            <NavBar title='Dashboard'/>
             
             <div className={styles.dashboardContainer}>
                 <section className={styles.firstSection}>
