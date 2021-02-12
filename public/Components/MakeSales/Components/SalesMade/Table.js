@@ -38,6 +38,10 @@ const Table = () => {
         accessor: "customer",
       },
       {
+        Header: "Item",
+        accessor: "item",
+      },
+      {
         Header: "Mode",
         accessor: "mode",
       },
@@ -54,36 +58,42 @@ const Table = () => {
       {
         date: "7th Feb",
         customer: "Abibatu Abiabata",
+        item: "Saudi Abaya",
         mode: "cheque",
         amount: "4000",
       },
       {
         date: "7th Feb",
         customer: "Abibatu Abiabata",
+        item: "Saudi Abaya",
         mode: "cheque",
         amount: "4000",
       },
       {
         date: "7th Feb",
         customer: "Abibatu Abiabata",
+        item: "Saudi Abaya",
         mode: "cheque",
         amount: "4000",
       },
       {
         date: "7th Feb",
         customer: "Abibatu Abiabata",
+        item: "Saudi Abaya",
         mode: "cheque",
         amount: "4000",
       },
       {
         date: "7th Feb",
         customer: "Abibatu Abiabata",
+        item: "Saudi Abaya",
         mode: "cheque",
         amount: "4000",
       },
       {
         date: "7th Feb",
         customer: "Abibatu Abiabata",
+        item: "Saudi Abaya",
         mode: "cheque",
         amount: "4000",
       },
