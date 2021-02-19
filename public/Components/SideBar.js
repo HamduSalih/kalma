@@ -15,7 +15,8 @@ const menuItems = [
         <RiDashboard3Line />
         </IconContext.Provider>,
       subMenu: [],
-      status: 'active'
+      status: 'active',
+      link: '/index'
     },
     {
       name: 'Sales',
@@ -23,7 +24,8 @@ const menuItems = [
         <AiOutlineShop />
         </IconContext.Provider>,
       subMenu: [],
-      status: ''
+      status: '',
+      link: '/sales/sales'
     },
     {
       name: 'Purchase',
@@ -31,7 +33,8 @@ const menuItems = [
         <MdAddShoppingCart />
         </IconContext.Provider>,
       subMenu: [],
-      status: ''
+      status: '',
+      link: '#'
     },
     {
       name: 'Report',
@@ -39,7 +42,8 @@ const menuItems = [
         <HiOutlineDocumentReport />
         </IconContext.Provider>,
       subMenu: [],
-      status: ''
+      status: '',
+      link: ''
     }
 ]
 
@@ -52,7 +56,7 @@ export default class SideBar extends React.Component{
                     menuItems.map((obj, index)=>{
                         //obj.status=='active' ? alert(obj.status): alert(null)
                         return(
-                        <Link key={index} href='#' style={{display: 'flex'}}>
+                        <Link key={index} href={`${obj.link}`} style={{display: 'flex'}}>
                             <a className={dashboardStyles.menuLinks} key={index}>
                             {obj.icon}
                             <li key={index} className={dashboardStyles.menuLI}>{obj.name}</li>

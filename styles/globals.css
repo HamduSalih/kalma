@@ -25,3 +25,32 @@ h4{
 .react-icons-top{
     vertical-align: middle;
 }
+
+.globalButton{
+  width: 100px;
+  font-size: 15px;
+  border: 0;
+  padding: 5px 10px;
+  background-color: #0000ff65;
+  margin-right: 20px;
+  color: #fff;
+}
+
+.globalButton:hover{
+  width: 100px;
+  font-size: 15px;
+  border: solid 1px #0000ff65;
+  padding: 5px 10px;
+  background-color: #fff;
+  margin-right: 20px;
+  color: inherit;
+}
+
+.globalButtonCancel{
+  width: 100px;
+  font-size: 15px;
+  border: solid 1px #0000ff65;
+  padding: 5px 10px;
+  background-color: #fff;
+  margin-right: 20px;
+}

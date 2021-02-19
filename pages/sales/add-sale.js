@@ -2,6 +2,7 @@ import React from "react";
 import TopNavigation from "../../public/Components/TopNavigation";
 import SideBar from "../../public/Components/SideBar.js";
 import AddSales from "../../public/Components/AddSale";
+import Unpaid from "../../public/Components/UnpaidSales";
 import Head from "next/head";
 import styles from "../../styles/Sales.module.css";
 
@@ -16,6 +17,7 @@ const AddSale = () => {
       <div className={styles.bodyContent}>
         <SideBar />
         <AddSales />
+        <Unpaid />
       </div>
     </div>
   );

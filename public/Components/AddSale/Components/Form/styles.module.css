@@ -1,0 +1,39 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px 20px 40px;
+}
+
+.formControl {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.label {
+  width: 150px;
+  font-size: 15px;
+  padding: 5px 5px;
+}
+
+.date {
+  width: 40%;
+  padding: 5px 5px;
+  border: solid 1px #0000ff1a;
+  border-radius: 3px;
+}
+
+.select {
+  padding: 5px 5px;
+  border: solid 1px #0000ff1a;
+  border-radius: 5px;
+}
+
+.date:focus {
+  border: 0px;
+  padding: 5px 5px;
+  border: solid 1px #0000ff1a;
+  border-radius: 3px;
+  box-shadow: 0 4px 4px 0 #001aff52;
+}

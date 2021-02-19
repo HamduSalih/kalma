@@ -1,11 +1,9 @@
 import React from "react";
-import Link from "next/link";
 import styles from "./styles.module.css";
-import { IconContext } from "react-icons";
-import { AiOutlineAppstoreAdd } from "react-icons/ai";
-import Table from "../../../../Components/Table";
+import Table from "../Table";
+import Link from "next/link";
 
-const SalesMade = () => {
+const Unpaid = () => {
   const columns = React.useMemo(
     () => [
       {
@@ -19,10 +17,6 @@ const SalesMade = () => {
       {
         Header: "Item",
         accessor: "item",
-      },
-      {
-        Header: "Mode",
-        accessor: "mode",
       },
       {
         Header: "Amount",
@@ -69,32 +63,21 @@ const SalesMade = () => {
         mode: "cheque",
         amount: "4000",
       },
-      {
-        date: "7th Feb",
-        customer: "Abibatu Abiabata",
-        item: "Saudi Abaya",
-        mode: "cheque",
-        amount: "4000",
-      },
     ],
     []
   );
   return (
     <div className={styles.container}>
-      <div className={styles.button}>
-        <Link href="/sales/add-sale">
-          <a>
-            <IconContext.Provider value={{ size: "30px", color: "#fff" }}>
-              <AiOutlineAppstoreAdd />
-            </IconContext.Provider>
-          </a>
-        </Link>
-      </div>
-      <div>
+      <h4 className={styles.heading}>Unpaid Sales</h4>
+      <div className={styles.tableDiv}>
         <Table columns={columns} data={data} />
+      </div>
+      <div className={styles.saveDiv}>
+        <input className='globalButton' type="button" value="Save" />
+        <input className='globalButtonCancel' type="button" value="Cancel" />
       </div>
     </div>
   );
 };
 
-export default SalesMade;
+export default Unpaid;
