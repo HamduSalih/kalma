@@ -16,7 +16,7 @@ const menuItems = [
         </IconContext.Provider>,
       subMenu: [],
       status: 'active',
-      link: '/index'
+      link: '/'
     },
     {
       name: 'Sales',
@@ -34,7 +34,7 @@ const menuItems = [
         </IconContext.Provider>,
       subMenu: [],
       status: '',
-      link: '#'
+      link: '/purchases/purchases'
     },
     {
       name: 'Report',
