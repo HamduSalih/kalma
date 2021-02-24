@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-width: calc(100vw-215px) !important;
+}
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0000ff88;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
