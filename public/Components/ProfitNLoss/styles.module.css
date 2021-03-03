@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-width: calc(100vw-215px) !important;
+  margin-left: 215px;
+}
+
+.printableArea{
+  display: flex;
+  flex-direction: column;
+  padding: 50px
+}

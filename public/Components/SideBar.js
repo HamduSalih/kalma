@@ -43,7 +43,7 @@ const menuItems = [
         </IconContext.Provider>,
       subMenu: [],
       status: '',
-      link: ''
+      link: '/reports/profit-loss'
     }
 ]
 
