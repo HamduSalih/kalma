@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap");
+
 .container {
   min-height: 100vh;
   display: flex;
@@ -14,7 +16,7 @@
   padding: 0;
 }
 
-.bodyContent{
+.bodyContent {
   display: flex;
   flex-direction: row;
   width: 100vw;
@@ -117,6 +119,76 @@
 
 .logo {
   height: 1em;
+}
+
+.spinnerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("/dashmenubg.png");
+  background-size: cover;
+}
+
+.signUpPageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.signUpCard {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.signUpLeft {
+  display: flex;
+  flex-direction: column;
+  background-color: blue;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.signUpRight {
+  display: flex;
+  flex-direction: column;
+  background-image: url("/dashmenubg.png");
+  background-size: cover;
+  width: 100%;
+  padding: 50px;
+}
+
+.regform1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.formElements {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.regInputs {
+  padding: 10px;
+  font-family: "Noto Sans SC", sans-serif;
+  border: 0;
+  box-shadow: 0 4px 8px 0 #0000ff1a;
+}
+
+.regButtons {
+  padding: 10px;
+  font-family: "Noto Sans SC", sans-serif;
+  border: 0;
+  background-color: blue;
+  color: #fff;
+  box-shadow: 0 4px 8px 0 #0000ff1a;
 }
 
 @media (max-width: 600px) {

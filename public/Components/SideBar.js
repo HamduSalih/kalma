@@ -16,7 +16,7 @@ const menuItems = [
         </IconContext.Provider>,
       subMenu: [],
       status: 'active',
-      link: '/'
+      link: '/dashboard'
     },
     {
       name: 'Sales',
