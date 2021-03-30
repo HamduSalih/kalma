@@ -169,6 +169,11 @@
   flex-direction: column;
 }
 
+.regform2 {
+  display: flex;
+  flex-direction: column;
+}
+
 .formElements {
   display: flex;
   flex-direction: column;

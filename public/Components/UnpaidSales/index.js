@@ -72,10 +72,6 @@ const Unpaid = () => {
       <div className={styles.tableDiv}>
         <Table columns={columns} data={data} />
       </div>
-      <div className={styles.saveDiv}>
-        <input className='globalButton' type="button" value="Save" />
-        <input className='globalButtonCancel' type="button" value="Cancel" />
-      </div>
     </div>
   );
 };
