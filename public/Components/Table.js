@@ -40,7 +40,7 @@ const ProfitStyled = styled.div`
     text-align: left;
   }
 
-  td{
+  td {
     margin: 0;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -57,8 +57,8 @@ const ProfitStyled = styled.div`
 `;
 
 const Table = (props) => {
-  const columns = props.columns;
-  const data = props.data;
+  const columns = React.useMemo(() => props.columns, []);
+  const data = React.useMemo(() => props.data, []);
   const {
     getTableProps,
     getTableBodyProps,

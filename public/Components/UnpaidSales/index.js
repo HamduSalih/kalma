@@ -2,10 +2,42 @@ import React from "react";
 import styles from "./styles.module.css";
 import Table from "../Table";
 import Link from "next/link";
+import { reactLocalStorage } from "reactjs-localstorage";
+import { firebase } from "../../Firebase/config";
 
-const Unpaid = () => {
-  const columns = React.useMemo(
-    () => [
+class Unpaid extends React.Component {
+  state = {};
+  async componentDidMount() {
+    var id = await reactLocalStorage.get("id");
+    this.setState({ id });
+    this.getUnpaidSales();
+  }
+
+  getUnpaidSales() {
+    let { id } = this.state;
+    firebase
+      .firestore()
+      .collection("users")
+      .doc(id)
+      .collection("sales")
+      .where("paidStatus", "==", "unpaid")
+      .onSnapshot((querySnapshot) => {
+        let unpaidSales = [];
+        querySnapshot.forEach((doc) => {
+          let newUnpaid = {
+            date: doc.data().date,
+            customer: doc.data().customerName,
+            item: doc.data().itemName,
+            amount: doc.data().amount,
+          };
+          unpaidSales.push(newUnpaid);
+        });
+        unpaidSales.length > 0 && this.setState({ unpaidSales });
+      });
+  }
+
+  render() {
+    const columns = [
       {
         Header: "Date",
         accessor: "date",
@@ -22,62 +54,18 @@ const Unpaid = () => {
         Header: "Amount",
         accessor: "amount",
       },
-    ],
-    []
-  );
-
-  const data = React.useMemo(
-    () => [
-      {
-        date: "7th Feb",
-        customer: "Abibatu Abiabata",
-        item: "Saudi Abaya",
-        mode: "cheque",
-        amount: "4000",
-      },
-      {
-        date: "7th Feb",
-        customer: "Abibatu Abiabata",
-        item: "Saudi Abaya",
-        mode: "cheque",
-        amount: "4000",
-      },
-      {
-        date: "7th Feb",
-        customer: "Abibatu Abiabata",
-        item: "Saudi Abaya",
-        mode: "cheque",
-        amount: "4000",
-      },
-      {
-        date: "7th Feb",
-        customer: "Abibatu Abiabata",
-        item: "Saudi Abaya",
-        mode: "cheque",
-        amount: "4000",
-      },
-      {
-        date: "7th Feb",
-        customer: "Abibatu Abiabata",
-        item: "Saudi Abaya",
-        mode: "cheque",
-        amount: "4000",
-      },
-    ],
-    []
-  );
-  return (
-    <div className={styles.container}>
-      <h4 className={styles.heading}>Unpaid Sales</h4>
-      <div className={styles.tableDiv}>
-        <Table columns={columns} data={data} />
+    ];
+    return (
+      <div className={styles.container}>
+        <h4 className={styles.heading}>Unpaid Sales</h4>
+        <div className={styles.tableDiv}>
+          {(this.state.unpaidSales && (
+            <Table columns={columns} data={this.state.unpaidSales} />
+          )) || <p>You have no unpaid sales...</p>}
+        </div>
       </div>
-      <div className={styles.saveDiv}>
-        <input className='globalButton' type="button" value="Save" />
-        <input className='globalButtonCancel' type="button" value="Cancel" />
-      </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default Unpaid;

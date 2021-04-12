@@ -10,7 +10,7 @@ export default function Home() {
   const router = useRouter();
   const TEXTS = [
     "Know where your money is going",
-    "Have and overview of your business. Whenever, wherever.",
+    "Have an overview of your business. Whenever, wherever.",
     "Stay on top with your receivables and track unpaid moeny.",
   ];
 
