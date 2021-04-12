@@ -7,8 +7,7 @@ import Table from "../../../../Components/Table";
 
 class Expenses extends React.Component{
   render(){
-    const columns = React.useMemo(
-      () => [
+    const columns = [
         {
           Header: "Date",
           accessor: "date",
@@ -29,12 +28,9 @@ class Expenses extends React.Component{
           Header: "Status",
           accessor: "status",
         },
-      ],
-      []
-    );
+      ]
   
-    const data = React.useMemo(
-      () => [
+    const data = [
         {
           date: "7th Feb",
           amount: "4000",
@@ -77,9 +73,7 @@ class Expenses extends React.Component{
           customer: "Abibatu Abiabata",
           status: "Paid",
         },
-      ],
-      []
-    );
+      ]
     return (
       <div className={styles.container}>
         <div className={styles.button}>
