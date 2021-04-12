@@ -7,11 +7,17 @@ import Table from "../../../../Components/Table";
 import { reactLocalStorage } from "reactjs-localstorage";
 import { firebase } from "../../../../Firebase/config";
 
-const SalesMade = () => {
-  const [sales, setSales] = useState([]);
+class SalesMade extends React.Component {
+  state = {};
+
+  componentDidMount() {
+    this.getAllUserSales();
+  }
+
   //get all sales made from database
-  async function getAllUserSales() {
+  getAllUserSales = async () => {
     var userId = await reactLocalStorage.get("id");
+    console.log(userId);
     firebase
       .firestore()
       .collection("users")
@@ -31,22 +37,17 @@ const SalesMade = () => {
             };
             retrievedSales.push(theData);
           });
-          setSales(retrievedSales);
-          console.log(sales);
+          this.setState({ sales: retrievedSales });
+          console.log(this.state.sales);
         }
       })
       .catch((error) => {
         console.log("Document does not exist ", error);
       });
-  }
+  };
 
-  React.useEffect(() => {
-    getAllUserSales();
-    //return () => clearTimeout(intervalId);
-  }, []);
-
-  const columns = React.useMemo(
-    () => [
+  render() {
+    const columns = [
       {
         Header: "Date",
         accessor: "date",
@@ -67,29 +68,26 @@ const SalesMade = () => {
         Header: "Amount",
         accessor: "amount",
       },
-    ],
-    []
-  );
-
-  const data = React.useMemo(() => sales, []);
-  return (
-    <div className={styles.container}>
-      <div className={styles.button}>
-        <Link href="/sales/add-sale">
-          <a>
-            <IconContext.Provider value={{ size: "30px", color: "#fff" }}>
-              <AiOutlineAppstoreAdd />
-            </IconContext.Provider>
-          </a>
-        </Link>
+    ];
+    return (
+      <div className={styles.container}>
+        <div className={styles.button}>
+          <Link href="/sales/add-sale">
+            <a>
+              <IconContext.Provider value={{ size: "30px", color: "#fff" }}>
+                <AiOutlineAppstoreAdd />
+              </IconContext.Provider>
+            </a>
+          </Link>
+        </div>
+        <div>
+          {(this.state.sales && (
+            <Table columns={columns} data={this.state.sales} />
+          )) || <p>No docs to be loaded... Add a sale to view it here</p>}
+        </div>
       </div>
-      <div>
-        {(sales.length > 0 && <Table columns={columns} data={data} />) || (
-          <p>No docs to be loaded... Add a sale to view it here</p>
-        )}
-      </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default SalesMade;

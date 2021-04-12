@@ -45,7 +45,7 @@ export default class AddSaleForm extends React.Component {
     }
   };
 
-  addSalestoDB = async(e) => {
+  addSalestoDB = async (e) => {
     let {
       paidStatus,
       paymentMode,
@@ -55,8 +55,8 @@ export default class AddSaleForm extends React.Component {
       itemName,
     } = this.state;
     e.preventDefault();
-    var id = await reactLocalStorage.get('id')
-    console.log(id)
+    var id = await reactLocalStorage.get("id");
+    console.log(id);
     if (Object.values(this.state).includes("")) {
       console.log("all fields not check");
     } else {
